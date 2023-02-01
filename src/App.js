@@ -5,7 +5,6 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import NotFound from "./Pages/NotFound";
 import Error from "./Pages/Error";
-import { useTheme } from "@emotion/react";
 
 const themeOptions = {
   palette: {
@@ -45,7 +44,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bg-home.png)] bg-top bg-scroll">
+      <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bg-home.png)] bg-top bg-no-repeat">
         <NavBar />
         <Routes>
           <Route exact index element={<Home />} />
