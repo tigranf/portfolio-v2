@@ -18,7 +18,7 @@ const NavBar = () => {
       position="static"
       elevation={0}
       color="transparent"
-      sx={{ maxWidth: 1280, mx: "auto" }}
+      sx={{ maxWidth: 1280, mx: "auto",mt:1 }}
     >
       <Toolbar variant="dense">
         <Box
@@ -26,15 +26,15 @@ const NavBar = () => {
           className="rounded-full bg-pale-gray "
           onClick={() => navigate("/")}
         >
-          <div className="w-9 h-9 bg-[url(../public/images/logo-mj2-100.png)] bg-center bg-contain"></div>
+          <div className="w-14 h-14 m-1 bg-[url(../public/images/logo-mj2-100.png)] bg-no-repeat bg-center bg-contain"></div>
         </Box>
         <Box sx={{ cursor: "pointer" }} pl={1} onClick={() => navigate("/")}>
           <Typography fontWeight={"bold"} variant="h5">
             tig.dev
           </Typography>
         </Box>
-        <Stack className="ml-auto" direction={"row"} spacing={0}>
-          {["Home", "Projects", "Résumé", "Contact"].map((text, index) => (
+        <Stack className="ml-auto" direction={{xs:"column",sm:"row"}} spacing={0}>
+          {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
             <ListItem key={index} disablePadding disableGutters>
               <ListItemButton>
                 <ListItemText
