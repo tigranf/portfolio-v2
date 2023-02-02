@@ -22,26 +22,36 @@ const Home = () => {
             Tigran
             <br /> Farmanyan
           </Typography>
-          <Typography
-            fontSize={{ xs: "2.9rem", sm: "5.2rem" }}
-            variant="h2"
-            className="sm:text-charcoal-gray"
-            sx={{ textShadow: "2px 2px 8px hsl(194, 28%, 9%, 0.4)" }}
-          >
-            Web Developer
-          </Typography>
           <motion.div
-          className="ml-auto"
+            className="ml-auto"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+              duration: 5,
+              ease: [0.45, 1.64, 0.41, 0.88],
+            }}
+          >
+            <Typography
+              fontSize={{ xs: "2.9rem", sm: "5.2rem" }}
+              variant="h2"
+              className="sm:text-charcoal-gray"
+              sx={{ textShadow: "2px 2px 8px hsl(194, 28%, 9%, 0.4)" }}
+            >
+              Web Developer
+            </Typography>
+          </motion.div>
+          <motion.div
+            className="ml-auto"
             animate={{
               x: -50,
-              y:-10,
+              y: -10,
               rotate: 360,
               scale: 1.2,
             }}
             transition={{
               duration: 1.9,
-              ease: [.45,1.64,.41,.88],
-              repeat: Infinity,
+              ease: [0.45, 1.64, 0.41, 0.88],
+              repeat: 1,
               repeatType: "reverse",
               repeatDelay: 2.5,
             }}
