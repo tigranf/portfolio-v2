@@ -1,5 +1,6 @@
 import { Box, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
@@ -9,51 +10,37 @@ import Error from "./Pages/Error";
 const themeOptions = {
   palette: {
     type: "light",
-    primary: {
-      main: "#3f51b5",
-    },
-    secondary: {
-      main: "#f50057",
-    },
+    primary: { main: "#3f51b5" },
+    secondary: { main: "#f50057" },
   },
   typography: {
     fontFamily: "Montserrat Alternates",
-    h1: {
-      fontFamily: "Lato",
-    },
-    h2: {
-      fontFamily: "Lato",
-    },
-    h3: {
-      fontFamily: "Lato",
-    },
-    h4: {
-      fontFamily: "Lato",
-    },
-    h5: {
-      fontFamily: "Lato",
-    },
-    h6: {
-      fontFamily: "Lato",
-    },
+    h1: { fontFamily: "Lato" },
+    h2: { fontFamily: "Lato" },
+    h3: { fontFamily: "Lato" },
+    h4: { fontFamily: "Lato" },
+    h5: { fontFamily: "Lato" },
+    h6: { fontFamily: "Lato" },
   },
 };
 const theme = createTheme(themeOptions);
 
 export default function App() {
+  const location = useLocation();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bg-home.png)] bg-top bg-no-repeat">
+      <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bm-bg-home.png)] bg-top bg-no-repeat">
         <NavBar />
-        <Routes>
-          <Route exact index element={<Home />} />
-          <Route exact path="/error" element={<Error />} />
-          <Route exact path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes key={location.pathname} location={location}>
+            <Route exact index element={<Home />} />
+            <Route exact path="/error" element={<Error />} />
+            <Route exact path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
         <Footer />
       </Box>
     </ThemeProvider>
   );
 }
-
