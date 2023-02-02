@@ -3,6 +3,7 @@ import React from "react";
 import ShortcutRoundedIcon from "@mui/icons-material/ShortcutRounded";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../Components/AnimatedPage";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,36 +30,53 @@ const Home = () => {
           >
             Web Developer
           </Typography>
-          <Button
-            onClick={() => navigate("/projects")}
-            sx={{
-              mt: 4,
-              mb: 1,
-              ml: { xs: 2, sm: "auto" },
-              minWidth: 240,
-              minHeight: { sm: 66, xs: 40 },
-              height: "8vh",
-              transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
-              background:
-                "linear-gradient(to right, hsl(320, 16%, 29%) , hsl(331, 100%, 36%))",
-              "&:hover": {
-                transform: "scale(1.1)",
-                boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
-              },
-              borderRadius: 50,
-              boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+          <motion.div
+          className="ml-auto"
+            animate={{
+              x: -50,
+              y:-10,
+              rotate: 360,
+              scale: 1.2,
+            }}
+            transition={{
+              duration: 1.9,
+              ease: [.45,1.64,.41,.88],
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 2.5,
             }}
           >
-            <Typography
-              color={"ButtonHighlight"}
-              className="flex gap-3"
-              fontWeight={"bold"}
-              variant="h5"
+            <Button
+              onClick={() => navigate("/projects")}
+              sx={{
+                mt: 4,
+                mb: 1,
+                ml: { xs: 2, sm: "auto" },
+                minWidth: 240,
+                minHeight: { sm: 66, xs: 40 },
+                height: "8vh",
+                transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
+                background:
+                  "linear-gradient(to right, hsl(320, 16%, 29%) , hsl(331, 100%, 36%))",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                  boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
+                },
+                borderRadius: 50,
+                boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+              }}
             >
-              My Work
-              <ShortcutRoundedIcon />
-            </Typography>
-          </Button>
+              <Typography
+                color={"ButtonHighlight"}
+                className="flex gap-3"
+                fontWeight={"bold"}
+                variant="h5"
+              >
+                My Work
+                <ShortcutRoundedIcon />
+              </Typography>
+            </Button>
+          </motion.div>
         </Box>
 
         <Box className="flex items-center justify-center">
