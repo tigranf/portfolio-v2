@@ -18,7 +18,7 @@ const NavBar = () => {
       position="static"
       elevation={0}
       color="transparent"
-      sx={{ maxWidth: 1280, mx: "auto",mt:1 }}
+      sx={{ maxWidth: 1280, mx: "auto", mt: 1 }}
     >
       <Toolbar variant="dense">
         <Box
@@ -33,10 +33,20 @@ const NavBar = () => {
             tig.dev
           </Typography>
         </Box>
-        <Stack className="ml-auto" direction={{xs:"column",sm:"row"}} spacing={0}>
+        <Stack
+          className="ml-auto"
+          direction={{ xs: "column", sm: "row" }}
+          spacing={0}
+        >
           {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
             <ListItem key={index} disablePadding disableGutters>
-              <ListItemButton>
+              <ListItemButton
+                onClick={() =>
+                  text === "Home"
+                    ? navigate("/")
+                    : navigate("/" + text.toLocaleLowerCase())
+                }
+              >
                 <ListItemText
                   disableTypography
                   primary={text}
