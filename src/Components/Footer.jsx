@@ -3,14 +3,16 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="w-full max-w-4xl mx-auto text-black body-font">
-      <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
+      <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:justify-around sm:flex-row">
+
         <a
-          className="flex items-center justify-center font-medium text-black title-font md:justify-start"
+          className="flex items-center justify-center font-medium text-black title-font md:justify-start sm:ml-auto"
           href="https://github.com/tigranf"
         >
           <span className="ml-3 text-2xl underline">Tigran Farmanyan</span>
         </a>
-        <p className="mt-4 text-sm text-black sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-black sm:py-2 sm:mt-0">
+
+        <p className="mt-4 text-sm text-black sm:mx-4 sm:px-4 sm:border-l-2 sm:border-black sm:py-2 sm:mt-0">
           © 2023 tig.dev creations —
           <a
             href="https://github.com/tigranf"
@@ -21,7 +23,8 @@ const Footer = () => {
             @tigranf
           </a>
         </p>
-        <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
+
+        <span className="inline-flex justify-center mt-4 sm:mt-0 sm:justify-start sm:ml-auto">
           <a href="https://github.com/tigranf" className="text-black">
             <svg
               fill="currentColor"
