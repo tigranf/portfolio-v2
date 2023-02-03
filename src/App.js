@@ -9,6 +9,7 @@ import Error from "./Pages/Error";
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
 import Contact from "./Pages/Contact";
+import Projects from "./Pages/Projects";
 
 const themeOptions = {
   palette: {
@@ -57,6 +58,7 @@ export default function App() {
           <AnimatePresence mode="wait">
             <Routes key={location.pathname} location={location}>
               <Route index element={<Home loading={loading} />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/error" element={<Error />} />
               <Route path="*" element={<NotFound />} />
