@@ -32,84 +32,100 @@ const projects = [
 ];
 
 const Projects = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col max-w-screen-lg mx-auto mb-auto">
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.22,
+        ease: [0.45, 1.64, 0.41, 0.98],
+      }}
+    >
       <h2 className="p-2 mb-4 mr-auto font-bold text-center text-9xl font-lato text-pale-gray">
         My Work
-      </h2>
+      </h2></motion.div>
       <div className="flex flex-col items-stretch justify-center gap-6 p-2 mx-auto mb-auto lg:flex-wrap md:flex-row min-h-96 place-items-center md:basis-1">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            className="flex flex-col h-full max-w-sm overflow-hidden rounded shadow-xl bg-[radial-gradient(circle,rgba(37,56,61,1)35%,rgba(26,39,43,1)100%)] bg-charcoal-gray hover:scale-105 transition-all"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.17,
+              ease: [0.45, 1.64, 0.41, 0.98],
+            }}
           >
-            <img
-              className="w-full transition-all saturate-[75%] hover:saturate-100"
-              src={project.image}
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="mb-2 text-xl font-bold">{project.title}</div>
-              <p className="text-base text-very-light-pink">
-                {project.description}
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center px-6 pt-4 pb-2 mt-auto">
-              {project.tech.map((tech, index) => (
-                <span
-                  key={index}
-                  className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 transition-all bg-gray-200 rounded-full hover:-translate-y-1"
+            <div className="flex flex-col h-full max-w-sm overflow-hidden rounded shadow-xl bg-[radial-gradient(circle,rgba(37,56,61,1)35%,rgba(26,39,43,1)100%)] bg-charcoal-gray hover:scale-105 transition-all">
+              <img
+                className="w-full transition-all saturate-[75%] hover:saturate-100"
+                src={project.image}
+                alt="Sunset in the mountains"
+              />
+              <div className="px-6 py-4">
+                <div className="mb-2 text-xl font-bold">{project.title}</div>
+                <p className="text-base text-very-light-pink">
+                  {project.description}
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center px-6 pt-4 pb-2 mt-auto">
+                {project.tech.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 transition-all bg-gray-200 rounded-full hover:-translate-y-1"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 px-6 pt-4 pb-6">
+                <Button
+                  sx={{
+                    minWidth: "40%",
+                    minHeight: { sm: 56, xs: 30 },
+                    transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
+                    background:
+                      "linear-gradient(to right bottom, hsl(310, 6%, 39%), hsl(194, 25%, 28%))",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
+                    },
+                    borderRadius: 2,
+                    boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+                  }}
+                  endIcon={<ArrowForward className="text-silver" />}
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  {tech}
-                </span>
-              ))}
+                  <p className="text-silver">Demo Site</p>
+                </Button>
+                <Button
+                  sx={{
+                    minWidth: "40%",
+                    minHeight: { sm: 56, xs: 30 },
+                    transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
+                    background:
+                      "linear-gradient(to right bottom, hsl(310, 6%, 39%), hsl(194, 25%, 28%))",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
+                    },
+                    borderRadius: 2,
+                    boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+                  }}
+                  endIcon={<ArrowForward className="text-silver" />}
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="text-silver">GitHub</p>
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 px-6 pt-4 pb-6">
-              <Button
-                sx={{
-                  minWidth: "40%",
-                  minHeight: { sm: 56, xs: 30 },
-                  transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
-                  background:
-                    "linear-gradient(to right bottom, hsl(310, 6%, 39%), hsl(194, 25%, 28%))",
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
-                  },
-                  borderRadius: 2,
-                  boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
-                }}
-                endIcon={<ArrowForward className="text-silver" />}
-                href={project.demo}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <p className="text-silver">Demo Site</p>
-              </Button>
-              <Button
-                sx={{
-                  minWidth: "40%",
-                  minHeight: { sm: 56, xs: 30 },
-                  transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
-                  background:
-                    "linear-gradient(to right bottom, hsl(310, 6%, 39%), hsl(194, 25%, 28%))",
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
-                  },
-                  borderRadius: 2,
-                  boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
-                }}
-                endIcon={<ArrowForward className="text-silver" />}
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <p className="text-silver">GitHub</p>
-              </Button>
-            </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <motion.div
