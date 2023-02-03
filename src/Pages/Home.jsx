@@ -88,23 +88,34 @@ const Home = ({ loading }) => {
               />
             </div>
           </div>
-          <div className="flex items-center justify-center max-w-3xl mx-8 ">
-            <p>
-              I am an aspiring coder and web developer who is currently enrolled
-              in the DigitalCrafts bootcamp for Web Development. I was born in
-              Yerevan, Armenia and raised in Texas, where I attended Clark High
-              School and Plano East Senior High School. I graduated with an
-              International Baccalaureate Diploma. I have some background in
-              computer science and programming, having studied these subjects
-              both at Plano East Senior High School at the University of Texas
-              in Austin for a couple of years before having to temporarily
-              interrupt my education. I then worked as a Guest Services
-              Coordinator at The Driskill Hotel for six years, where I developed
-              my skills in team leadership, customer service, and complaint
-              resolution. In my leisure time, I enjoy exploring the Texas hill
-              country, playing disc golf, and spending time with my wife.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.22,
+              ease: [0.45, 1.64, 0.41, 0.98],
+              delay: 3.3
+            }}
+          >
+            <div className="flex items-center justify-center max-w-3xl mx-auto text-lg font-medium leading-10 text-justify ">
+              <p>
+                I am an aspiring coder and web developer who is currently
+                enrolled in the DigitalCrafts bootcamp for Web Development. I
+                was born in Yerevan, Armenia and raised in Texas, where I
+                attended Clark High School and Plano East Senior High School. I
+                graduated with an International Baccalaureate Diploma. I have
+                some background in computer science and programming, having
+                studied these subjects both at Plano East Senior High School at
+                the University of Texas in Austin for a couple of years before
+                having to temporarily interrupt my education. I then worked as a
+                Guest Services Coordinator at The Driskill Hotel for six years,
+                where I developed my skills in team leadership, customer
+                service, and complaint resolution. In my leisure time, I enjoy
+                exploring the Texas hill country, playing disc golf, and
+                spending time with my wife.
+              </p>
+            </div>
+          </motion.div>
         </AnimatedPage>
       )}
     </>

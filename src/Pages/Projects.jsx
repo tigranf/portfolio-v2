@@ -35,17 +35,18 @@ const Projects = () => {
   const navigate = useNavigate();
   return (
     <section className="flex flex-col max-w-screen-lg mx-auto mb-auto">
-    <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 1.22,
-        ease: [0.45, 1.64, 0.41, 0.98],
-      }}
-    >
-      <h2 className="p-2 mb-4 mr-auto font-bold text-center text-9xl font-lato text-pale-gray">
-        My Work
-      </h2></motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.22,
+          ease: [0.45, 1.64, 0.41, 0.98],
+        }}
+      >
+        <h2 className="p-2 mb-4 mr-auto font-bold text-center text-9xl font-lato text-pale-gray">
+          My Work
+        </h2>
+      </motion.div>
       <div className="flex flex-col items-stretch justify-center gap-6 p-2 mx-auto mb-auto lg:flex-wrap md:flex-row min-h-96 place-items-center md:basis-1">
         {projects.map((project, index) => (
           <motion.div
