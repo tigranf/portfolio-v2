@@ -90,19 +90,19 @@ const Home = ({ loading }) => {
           </div>
           <div className="flex items-center justify-center max-w-3xl mx-8 ">
             <p>
-              Hi! I am an aspiring coder and web developer who is completing
-              DigitalCrafts bootcamp for Web Development. Born and raised in
-              Yerevan, Armenia but we moved in 2001. I grew up in Texas
-              attending Clark High School and Plano East Senior High School,
-              graduating with the International Baccalaureate Diploma. I have a
-              little background in computer science and programming, having
-              studied these subjects at the University of Texas in Austin for a
-              couple years before having to pause my education. After, I became
-              Guest Services Coordinator at The Driskill Hotel for 6 years,
-              where I gained experience in leading teams, providing excellent
-              customer service, and managing guest complaints. In My free time,
-              I enjoy the Texas hill country, playing disc golf, and spending
-              quality time my wife.
+              I am an aspiring coder and web developer who is currently enrolled
+              in the DigitalCrafts bootcamp for Web Development. I was born in
+              Yerevan, Armenia and raised in Texas, where I attended Clark High
+              School and Plano East Senior High School. I graduated with an
+              International Baccalaureate Diploma. I have some background in
+              computer science and programming, having studied these subjects
+              both at Plano East Senior High School at the University of Texas
+              in Austin for a couple of years before having to temporarily
+              interrupt my education. I then worked as a Guest Services
+              Coordinator at The Driskill Hotel for six years, where I developed
+              my skills in team leadership, customer service, and complaint
+              resolution. In my leisure time, I enjoy exploring the Texas hill
+              country, playing disc golf, and spending time with my wife.
             </p>
           </div>
         </AnimatedPage>
