@@ -8,6 +8,7 @@ import NotFound from "./Pages/NotFound";
 import Error from "./Pages/Error";
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
+import Contact from "./Pages/Contact";
 
 const themeOptions = {
   palette: {
@@ -22,8 +23,9 @@ const themeOptions = {
 const theme = createTheme(themeOptions);
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
   const location = useLocation();
+  let initial = location.pathname === "/" ? true : false;
+  const [loading, setLoading] = useState(initial);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -54,9 +56,10 @@ export default function App() {
           <NavBar />
           <AnimatePresence mode="wait">
             <Routes key={location.pathname} location={location}>
-              <Route exact index element={<Home loading={loading} />} />
-              <Route exact path="/error" element={<Error />} />
-              <Route exact path="*" element={<NotFound />} />
+              <Route index element={<Home loading={loading} />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/error" element={<Error />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence>
           <Footer />
