@@ -88,6 +88,23 @@ const Home = ({ loading }) => {
               />
             </div>
           </div>
+          <div className="flex items-center justify-center max-w-3xl mx-8 ">
+            <p>
+              Hi! I am an aspiring coder and web developer who is completing
+              DigitalCrafts bootcamp for Web Development. Born and raised in
+              Yerevan, Armenia but we moved in 2001. I grew up in Texas
+              attending Clark High School and Plano East Senior High School,
+              graduating with the International Baccalaureate Diploma. I have a
+              little background in computer science and programming, having
+              studied these subjects at the University of Texas in Austin for a
+              couple years before having to pause my education. After, I became
+              Guest Services Coordinator at The Driskill Hotel for 6 years,
+              where I gained experience in leading teams, providing excellent
+              customer service, and managing guest complaints. In My free time,
+              I enjoy the Texas hill country, playing disc golf, and spending
+              quality time my wife.
+            </p>
+          </div>
         </AnimatedPage>
       )}
     </>

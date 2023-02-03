@@ -1,4 +1,4 @@
-import { Send } from "@mui/icons-material";
+import { LocationCity, Send } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
 
 const Contact = () => {
@@ -16,6 +16,8 @@ const Contact = () => {
           <div>
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
               Let's talk!
+              <br />
+              <LocationCity fontSize="large" /> <span className="text-3xl">Austin, TX</span>
             </h2>
             <div className="mt-8 text-xl font-medium text-very-light-pink">
               Hate forms? Send me an{" "}
