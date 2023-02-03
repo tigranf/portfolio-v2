@@ -17,33 +17,42 @@ import {
   Menu,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import ResumeModal from "./ResumeModal";
 
 const drawerWidth = 240;
 const navItems = [
-  {
-    text: "Home",
-    icon: <Home className="text-silver" />,
-  },
-  {
-    text: "Projects",
-    icon: <Code className="text-silver" />,
-  },
-  {
-    text: "Resume",
-    icon: <Description className="text-silver" />,
-  },
-  {
-    text: "Contact",
-    icon: <ContactPage className="text-silver" />,
-  },
+  { text: "Home", icon: <Home className="text-silver" /> },
+  { text: "Projects", icon: <Code className="text-silver" /> },
+  { text: "Resume", icon: <Description className="text-silver" /> },
+  { text: "Contact", icon: <ContactPage className="text-silver" /> },
 ];
 
 function NavBar({ window }) {
   const [open, setOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleNav = () => {
     setOpen((prevState) => !prevState);
+  };
+
+  const handleNavLink = (text) => {
+    switch (text) {
+      case "Home":
+        navigate("/");
+        break;
+      case "Projects":
+        navigate("/projects");
+        break;
+      case "Contact":
+        navigate("/contact");
+        break;
+      case "Resume":
+        setResumeModalOpen(true);
+        break;
+      default:
+        break;
+    }
   };
 
   const drawer = (
@@ -72,21 +81,12 @@ function NavBar({ window }) {
         {navItems.map(({ text, icon }, index) => (
           <ListItem key={index}>
             <ListItemButton
-              onClick={() =>
-                text === "Home"
-                  ? navigate("/")
-                  : navigate("/" + text.toLocaleLowerCase())
-              }
+              onClick={() => handleNavLink(text)}
             >
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText
                 disableTypography
                 primary={text}
-                onClick={() =>
-                  text === "Home"
-                    ? navigate("/")
-                    : navigate("/" + text.toLocaleLowerCase())
-                }
                 className="text-xl font-bold"
               />
             </ListItemButton>
@@ -127,23 +127,12 @@ function NavBar({ window }) {
               flexDirection="row"
               sx={{ display: { xs: "none", sm: "flex" } }}
             >
-              {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
+              {navItems.map(({ text }, index) => (
                 <ListItem key={index} disablePadding disableGutters>
-                  <ListItemButton
-                    onClick={() =>
-                      text === "Home"
-                        ? navigate("/")
-                        : navigate("/" + text.toLocaleLowerCase())
-                    }
-                  >
+                  <ListItemButton onClick={() => handleNavLink(text)}>
                     <ListItemText
                       disableTypography
                       primary={text}
-                      onClick={() =>
-                        text === "Home"
-                          ? navigate("/")
-                          : navigate("/" + text.toLocaleLowerCase())
-                      }
                       className="font-bold "
                     />
                   </ListItemButton>
@@ -183,6 +172,8 @@ function NavBar({ window }) {
           {drawer}
         </Drawer>
       </Box>
+
+      <ResumeModal resumeModalOpen={resumeModalOpen} setResumeModalOpen={(open) => setResumeModalOpen(open)} />
     </Box>
   );
 }
