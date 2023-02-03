@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <AnimatedPage>
       <div className="grid place-items-center">
-        <Typography variant="h1">NotFound</Typography>
+        <Typography variant="h1">404 Not Found</Typography>
       </div>
     </AnimatedPage>
   );

@@ -1,103 +1,95 @@
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import { Button, Typography } from "@mui/material";
 import ShortcutRoundedIcon from "@mui/icons-material/ShortcutRounded";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../Components/AnimatedPage";
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Home = ({ loading }) => {
   const navigate = useNavigate();
   return (
-    <AnimatedPage>
-      <Box className="flex flex-wrap mx-auto mb-auto lg:flex-nowrap max-w-7xl">
-        <Box className="flex flex-col pt-8 pl-8 sm:pl-24 sm:pt-36">
-          <Typography
-            fontWeight={700}
-            variant="h1"
-            fontSize={{ xs: "3.8rem", sm: "7rem" }}
-            mb={{ xs: 0, sm: 4 }}
-            className=" text-pale-gray"
-            sx={{ textShadow: "6px 8px 8px hsl(194, 28%, 9%, 0.5)" }}
-          >
-            Tigran
-            <br /> Farmanyan
-          </Typography>
-          <motion.div
-            className="ml-auto"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{
-              duration: 5,
-              ease: [0.45, 1.64, 0.41, 0.88],
-            }}
-          >
-            <Typography
-              fontSize={{ xs: "2.9rem", sm: "5.2rem" }}
-              variant="h2"
-              className="sm:text-charcoal-gray"
-              sx={{ textShadow: "2px 2px 8px hsl(194, 28%, 9%, 0.4)" }}
-            >
-              Web Developer
-            </Typography>
-          </motion.div>
-          <motion.div
-            className="ml-auto"
-            animate={{
-              x: -50,
-              y: -10,
-              rotate: 360,
-              scale: 1.2,
-            }}
-            transition={{
-              duration: 1.9,
-              ease: [0.45, 1.64, 0.41, 0.88],
-              repeat: 1,
-              repeatType: "reverse",
-              repeatDelay: 2.5,
-            }}
-          >
-            <Button
-              onClick={() => navigate("/projects")}
-              sx={{
-                mt: 4,
-                mb: 1,
-                ml: { xs: 2, sm: "auto" },
-                minWidth: 240,
-                minHeight: { sm: 66, xs: 40 },
-                height: "8vh",
-                transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
-                background:
-                  "linear-gradient(to right, hsl(320, 16%, 29%) , hsl(331, 100%, 36%))",
-                "&:hover": {
-                  transform: "scale(1.1)",
-                  boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
-                },
-                borderRadius: 50,
-                boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
-              }}
-            >
-              <Typography
-                color={"ButtonHighlight"}
-                className="flex gap-3"
-                fontWeight={"bold"}
-                variant="h5"
+    <>
+      {!loading && (
+        <AnimatedPage>
+          <div className="flex flex-wrap flex-col-reverse justify-around lg:flex-row gap-8 w-full min-h-[calc(100vh-180px)] mx-auto mb-auto max-w-screen-xl lg:flex-nowrap">
+            <div className="flex flex-col justify-center gap-2 mx-auto mb-auto lg:mb-9 lg:basis-7/12">
+              <h1 className="mt-auto text-4xl font-bold text-center lg:text-end sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-xl text-pale-gray font-lato whitespace-nowrap md:whitespace-pre-wrap">
+                Tigran
+                <br />
+                Farmanyan
+              </h1>
+              <motion.div
+                className="w-full ml-auto lg:text-end"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 7,
+                  delay: 1.2,
+                  ease: [0.45, 1.64, 0.41, 0.88],
+                }}
               >
-                My Work
-                <ShortcutRoundedIcon />
-              </Typography>
-            </Button>
-          </motion.div>
-        </Box>
+                <h2 className="text-4xl text-center lg:mt-6 lg:text-end sm:text-6xl text-very-light-pink md:text-7xl drop-shadow-lg font-quicksand ">
+                  Web Developer
+                </h2>
+              </motion.div>
+              <motion.div
+                className="ml-auto mr-auto lg:mr-0"
+                animate={{
+                  y: -45,
+                  scale: 1.2,
+                  scaleX: 1.1,
+                  filter: "brightness(125%) saturate(125%) contrast(125%)",
+                }}
+                transition={{
+                  duration: 1.5,
+                  ease: [0.45, 1.64, 0.41, 0.98],
+                  repeat: 1,
+                  repeatType: "reverse",
+                  repeatDelay: 1.8,
+                }}
+              >
+                <Button
+                  onClick={() => navigate("/projects")}
+                  sx={{
+                    ml: { xs: 0, sm: "auto" },
+                    my: { xs: 14, md: 7 },
+                    minWidth: 240,
+                    minHeight: { sm: 66, xs: 40 },
+                    height: "9vh",
+                    transition: "0.333s cubic-bezier(.45,1.64,.41,.88)",
+                    background:
+                      "linear-gradient(to right bottom, hsl(310, 6%, 29%), hsl(194, 25%, 18%))",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      boxShadow: "0px 4px 60px 16px hsl(194, 28%, 16%, 0.5)",
+                    },
+                    borderRadius: 2,
+                    boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+                  }}
+                >
+                  <Typography
+                    color={"ButtonHighlight"}
+                    className="flex gap-3"
+                    fontWeight={"bold"}
+                    variant="h5"
+                  >
+                    My Work
+                    <ShortcutRoundedIcon />
+                  </Typography>
+                </Button>
+              </motion.div>
+            </div>
 
-        <Box className="flex items-center justify-center">
-          <img
-            className="drop-shadow-xl"
-            src="/images/3d-render-mj.png"
-            alt="3D render of person crossing arms and smiling"
-          />
-        </Box>
-      </Box>
-    </AnimatedPage>
+            <div className="flex items-center justify-center max-w-3xl mx-auto mt-0 w-80 lg:w-full lg:basis-5/12">
+              <img
+                className="object-scale-down px-12 sm:px-2 drop-shadow-xl"
+                src="/images/3d-render-mj.png"
+                alt="3D render of person crossing arms and smiling"
+              />
+            </div>
+          </div>
+        </AnimatedPage>
+      )}
+    </>
   );
 };
 

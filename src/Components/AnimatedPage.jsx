@@ -19,8 +19,8 @@ const animations = {
     scale: 1,
     transition: {
       type: "spring",
-      duration: 0.333,
-      delay: 0.05,
+      duration: 0.67,
+      delay: 0.075,
       ease: [0.79, 0.14, 0.15, 0.86],
     },
   },
