@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        oswald: ["Oswald", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
         montserrat: ["Montserrat Alternates", "sans-serif"],
       },
       colors: {
@@ -24,6 +24,9 @@ module.exports = {
         "pale-gray": "#FBFDFF",
         "cool-gray": "#99A0A6",
         "charcoal-gray": "#23383D",
+        "light-charcoal-gray": "hsl(192, 24%, 29%)",
+        "dark-gray": "hsl(310, 6%, 29%)",
+        "very-light-pink": "hsl(12, 24%, 81%)"
       },
       dropShadow: {
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
