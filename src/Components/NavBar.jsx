@@ -1,143 +1,190 @@
-import { Close, Inbox, Menu } from "@mui/icons-material";
-import {
-  AppBar,
-  Box,
-  IconButton,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Stack,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import { ListItemIcon, Stack } from "@mui/material";
+import {
+  Code,
+  ContactPage,
+  Description,
+  Home,
+  Menu,
+} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
-  const navigate = useNavigate();
-  const [navOpen, setNavOpen] = useState(false);
+const drawerWidth = 240;
+const navItems = [
+  {
+    text: "Home",
+    icon: <Home className="text-silver" />,
+  },
+  {
+    text: "Projects",
+    icon: <Code className="text-silver" />,
+  },
+  {
+    text: "Resume",
+    icon: <Description className="text-silver" />,
+  },
+  {
+    text: "Contact",
+    icon: <ContactPage className="text-silver" />,
+  },
+];
 
-  const handleNav = (state) => {
-    setNavOpen(state);
+function NavBar({ window }) {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNav = () => {
+    setOpen((prevState) => !prevState);
   };
 
-  return (
-    <AppBar
-      position="static"
-      elevation={0}
-      color="transparent"
-      sx={{ maxWidth: 1280, mx: "auto", my: 1 }}
+  const drawer = (
+    <Stack
+      className="ml-auto"
+      direction={{ xs: "column", sm: "row" }}
+      spacing={0}
+      sx={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        px: 2,
+        py: 2,
+        background: "linear-gradient(to top right, #23383D, #080808)",
+        height: "100%",
+        width: drawerWidth,
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        borderLeft: "1px solid hsl(207, 6%, 68%, 0.25)",
+        textAlign: "center",
+      }}
+      onClick={handleNav}
     >
-      <Toolbar variant="dense">
-        <Box
-          sx={{ cursor: "pointer" }}
-          className="rounded-full bg-silver "
-          onClick={() => navigate("/")}
-        >
-          <div className="w-9 h-9 m-[6px] bg-[url(../public/images/logo-mj2-100.png)] bg-no-repeat bg-center bg-contain"></div>
-        </Box>
-        <Box sx={{ cursor: "pointer" }} pl={1} onClick={() => navigate("/")}>
-          <Typography fontWeight={"bold"} fontSize={"1.4rem"}>
-            tig.dev
-          </Typography>
-        </Box>
-
-        <Box className="ml-auto ">
-          <IconButton
-            sx={{ display: { xs: "block", sm: "none" } }}
-            onClick={() => handleNav(true)}
-          >
-            <Menu
-              className="text-silver"
-              fontSize="large"
-              sx={{ display: { xs: "block", sm: "none" } }}
-            />
-          </IconButton>
-          <Stack
-            className="ml-auto"
-            direction={{ xs: "column", sm: "row" }}
-            spacing={0}
-            sx={{ display: { xs: "none", sm: "flex" } }}
-          >
-            {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
-              <ListItem key={index} disablePadding disableGutters>
-                <ListItemButton
-                  onClick={() =>
-                    text === "Home"
-                      ? navigate("/")
-                      : navigate("/" + text.toLocaleLowerCase())
-                  }
-                >
-                  <ListItemText
-                    disableTypography
-                    primary={text}
-                    onClick={() =>
-                      text === "Home"
-                        ? navigate("/")
-                        : navigate("/" + text.toLocaleLowerCase())
-                    }
-                    className="font-bold "
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </Stack>
-        </Box>
-
-        <Stack
-          className="ml-auto"
-          direction={{ xs: "column", sm: "row" }}
-          spacing={0}
-          sx={{
-            position: "fixed",
-            top: 0,
-            right: 0,
-            px: 2,
-            py: 2,
-            background: "linear-gradient(to top right, #23383D, #080808)",
-            height: "100%",
-            width: "40%",
-            minWidth: "200px",
-            zIndex: 10,
-            display: navOpen ? { xs: "flex", sm: "none" } : "none",
-            alignItems: "center",
-            borderLeft: "1px solid hsl(207, 6%, 68%, 0.25)",
-          }}
-        >
-          <IconButton className="self-end" onClick={() => handleNav(false)}>
-            <Close fontSize="large" className=" text-silver" />
-          </IconButton>
-
-          {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
-            <ListItem key={index} disableGutters>
-              <ListItemButton
+      <Stack width={drawerWidth} className="text-pale-gray">
+        {navItems.map(({ text, icon }, index) => (
+          <ListItem key={index}>
+            <ListItemButton
+              onClick={() =>
+                text === "Home"
+                  ? navigate("/")
+                  : navigate("/" + text.toLocaleLowerCase())
+              }
+            >
+              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemText
+                disableTypography
+                primary={text}
                 onClick={() =>
                   text === "Home"
                     ? navigate("/")
                     : navigate("/" + text.toLocaleLowerCase())
                 }
-              >
-                <ListItemIcon>
-                  <Inbox className="text-silver" />
-                </ListItemIcon>
-                <ListItemText
-                  disableTypography
-                  primary={text}
-                  onClick={() =>
-                    text === "Home"
-                      ? navigate("/")
-                      : navigate("/" + text.toLocaleLowerCase())
-                  }
-                  className="font-bold "
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </Stack>
-      </Toolbar>
-    </AppBar>
+                className="text-xl font-bold"
+              />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </Stack>
+    </Stack>
   );
-};
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <AppBar
+        position="static"
+        elevation={0}
+        color="transparent"
+        sx={{ maxWidth: 1280, mx: "auto", my: 1 }}
+      >
+        <Toolbar variant="dense">
+          <Box
+            sx={{ cursor: "pointer" }}
+            className="rounded-full bg-silver"
+            onClick={() => navigate("/")}
+          >
+            <div className="w-9 h-9 m-[6px] bg-[url(../public/images/logo-mj2-100.png)] bg-no-repeat bg-center bg-contain"></div>
+          </Box>
+          <Box sx={{ cursor: "pointer" }} pl={1} onClick={() => navigate("/")}>
+            <Typography fontWeight={"bold"} fontSize={"1.4rem"}>
+              tig.dev
+            </Typography>
+          </Box>
+
+          <Box className="ml-auto">
+            <Stack
+              spacing={0}
+              flexDirection="row"
+              sx={{ display: { xs: "none", sm: "flex" } }}
+            >
+              {["Home", "Projects", "Resume", "Contact"].map((text, index) => (
+                <ListItem key={index} disablePadding disableGutters>
+                  <ListItemButton
+                    onClick={() =>
+                      text === "Home"
+                        ? navigate("/")
+                        : navigate("/" + text.toLocaleLowerCase())
+                    }
+                  >
+                    <ListItemText
+                      disableTypography
+                      primary={text}
+                      onClick={() =>
+                        text === "Home"
+                          ? navigate("/")
+                          : navigate("/" + text.toLocaleLowerCase())
+                      }
+                      className="font-bold "
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </Stack>
+          </Box>
+          <IconButton
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleNav}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <Menu className="text-silver" fontSize="large" />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      <Box component="nav">
+        <Drawer
+          container={container}
+          anchor={"right"}
+          variant="temporary"
+          open={open}
+          onClose={handleNav}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </Box>
+  );
+}
 
 export default NavBar;
