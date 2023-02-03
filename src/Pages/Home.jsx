@@ -12,7 +12,7 @@ const Home = ({ loading }) => {
         <AnimatedPage>
           <div className="flex flex-wrap flex-col-reverse justify-around lg:flex-row gap-8 w-full min-h-[calc(100vh-180px)] mx-auto mb-auto max-w-screen-xl lg:flex-nowrap">
             <div className="flex flex-col justify-center gap-2 mx-auto mb-auto lg:mb-9 lg:basis-7/12">
-              <h1 className="mt-auto text-4xl font-bold text-center lg:text-end sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-xl text-pale-gray font-lato whitespace-nowrap md:whitespace-pre-wrap">
+              <h1 className="mt-auto text-5xl font-bold text-center lg:text-end sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-xl text-pale-gray font-lato whitespace-nowrap md:whitespace-pre-wrap">
                 Tigran
                 <br />
                 Farmanyan
@@ -27,14 +27,14 @@ const Home = ({ loading }) => {
                   ease: [0.45, 1.64, 0.41, 0.88],
                 }}
               >
-                <h2 className="text-4xl text-center lg:mt-6 lg:text-end sm:text-6xl text-very-light-pink md:text-7xl drop-shadow-lg font-quicksand ">
+                <h2 className="text-5xl text-center lg:mt-6 lg:text-end sm:text-6xl text-very-light-pink md:text-7xl drop-shadow-lg font-quicksand ">
                   Web Developer
                 </h2>
               </motion.div>
               <motion.div
                 className="ml-auto mr-auto lg:mr-0"
                 animate={{
-                  y: -45,
+                  y: -40,
                   scale: 1.2,
                   scaleX: 1.1,
                   filter: "brightness(125%) saturate(125%) contrast(125%)",
@@ -51,7 +51,8 @@ const Home = ({ loading }) => {
                   onClick={() => navigate("/projects")}
                   sx={{
                     ml: { xs: 0, sm: "auto" },
-                    my: { xs: 14, md: 7 },
+                    mt: { xs: 6, md: 7 },
+                    mb: { xs: 12, md: 7 },
                     minWidth: 240,
                     minHeight: { sm: 66, xs: 40 },
                     height: "9vh",
@@ -81,7 +82,7 @@ const Home = ({ loading }) => {
 
             <div className="flex items-center justify-center max-w-3xl mx-auto mt-0 w-80 lg:w-full lg:basis-5/12">
               <img
-                className="object-scale-down px-12 sm:px-2 drop-shadow-xl"
+                className="object-scale-down px-16 sm:px-2 drop-shadow-xl"
                 src="/images/3d-render-mj.png"
                 alt="3D render of person crossing arms and smiling"
               />

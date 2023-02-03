@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full max-w-4xl mx-auto font-semibold text-black body-font">
+    <footer className="w-full max-w-4xl mx-auto font-bold text-black body-font">
       <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:justify-around sm:flex-row">
 
         <a
@@ -12,7 +12,7 @@ const Footer = () => {
           <span className="ml-3 text-2xl underline">Tigran Farmanyan</span>
         </a>
 
-        <p className="mt-4 text-sm font-medium text-black sm:mx-4 sm:px-4 sm:border-l-2 sm:border-black sm:py-2 sm:mt-0">
+        <p className="mt-4 font-medium text-black text-md sm:mx-4 sm:px-4 sm:border-l-2 sm:border-black sm:py-2 sm:mt-0">
           © 2023 tig.dev creations —
           <a
             href="https://github.com/tigranf"
