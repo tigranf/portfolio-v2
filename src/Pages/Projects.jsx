@@ -54,8 +54,8 @@ const Projects = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
-              delay: index * 0.17,
+              duration: 1,
+              delay: index * 0.2 + 0.2,
               ease: [0.45, 1.64, 0.41, 0.98],
             }}
           >
@@ -138,7 +138,7 @@ const Projects = () => {
           filter: "brightness(125%) saturate(125%) contrast(125%)",
         }}
         transition={{
-          duration: 1,
+          duration: 0.5,
           ease: [0.45, 1.64, 0.41, 0.98],
           repeat: 1,
           repeatType: "reverse",

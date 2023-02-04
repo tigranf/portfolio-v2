@@ -1,4 +1,4 @@
-import { Button, Divider, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import ShortcutRoundedIcon from "@mui/icons-material/ShortcutRounded";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../Components/AnimatedPage";

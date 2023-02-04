@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     backgroundImage: {
       "low-poly-1": "url('../public/images/low-poly-grid-1.svg')",
-      "computer": "url('../public/images/computer-website-3d.png')",
+      computer: "url('../public/images/computer-website-3d.png')",
     },
     extend: {
       fontFamily: {
@@ -27,7 +27,7 @@ module.exports = {
         "charcoal-gray-2": "hsl(192, 24%, 19%,0.5)",
         "light-charcoal-gray": "hsl(192, 24%, 29%)",
         "dark-gray": "hsl(310, 6%, 29%)",
-        "very-light-pink": "hsl(12, 24%, 81%)"
+        "very-light-pink": "hsl(12, 24%, 81%)",
       },
       dropShadow: {
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
@@ -62,8 +62,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-  ],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
 };

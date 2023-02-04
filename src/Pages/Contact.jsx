@@ -17,7 +17,8 @@ const Contact = () => {
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
               Let's talk!
               <br />
-              <LocationCity fontSize="large" /> <span className="text-3xl">Austin, TX</span>
+              <LocationCity fontSize="large" />{" "}
+              <span className="text-3xl">Austin, TX</span>
             </h2>
             <div className="mt-8 text-xl font-medium text-very-light-pink">
               Hate forms? Send me an{" "}

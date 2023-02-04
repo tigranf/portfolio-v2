@@ -80,9 +80,7 @@ function NavBar({ window }) {
       <Stack width={drawerWidth} className="text-pale-gray">
         {navItems.map(({ text, icon }, index) => (
           <ListItem key={index}>
-            <ListItemButton
-              onClick={() => handleNavLink(text)}
-            >
+            <ListItemButton onClick={() => handleNavLink(text)}>
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText
                 disableTypography
@@ -173,7 +171,10 @@ function NavBar({ window }) {
         </Drawer>
       </Box>
 
-      <ResumeModal resumeModalOpen={resumeModalOpen} setResumeModalOpen={(open) => setResumeModalOpen(open)} />
+      <ResumeModal
+        resumeModalOpen={resumeModalOpen}
+        setResumeModalOpen={(open) => setResumeModalOpen(open)}
+      />
     </Box>
   );
 }
