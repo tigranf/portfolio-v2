@@ -85,7 +85,7 @@ const Contact = () => {
           </div>
           <div className="mx-auto mt-8">
             <Button
-              onClick={() => {}}
+              type="submit"
               sx={{
                 minWidth: "100%",
                 minHeight: { sm: 66, xs: 40 },
