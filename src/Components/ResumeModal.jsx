@@ -62,7 +62,7 @@ const ResumeModal = ({ resumeModalOpen, setResumeModalOpen }) => {
               height="900px"
             >
               <p className="text-2xl leading-10">
-                Your web browser doesn't have a PDF plugin. Instead you can{" "}
+                Your web browser doesn't have a PDF plugin. Instead, you can{" "}
                 <Link
                   className="font-medium"
                   href="/2023_Resume_Tigran_Farmanyan.pdf"

@@ -14,7 +14,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+            <h2 className="text-4xl font-bold leading-tight lg:text-5xl text-pale-gray">
               Let's talk!
               <br />
               <LocationCity fontSize="large" />{" "}
@@ -27,12 +27,13 @@ const Contact = () => {
                 href="mailto:tigran.farmanyan@gmail.com"
               >
                 email
-              </a>
-              &nbsp;instead.
+              </a>{" "}
+              instead.
             </div>
           </div>
         </div>
         <form name="contact" netlify>
+        <input type="hidden" name="form-name" value="contact" />
           <div>
             <span className="text-lg font-bold uppercase text-silver">
               Full Name
