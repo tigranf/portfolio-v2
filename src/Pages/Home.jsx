@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 import ShortcutRoundedIcon from "@mui/icons-material/ShortcutRounded";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../Components/AnimatedPage";
@@ -10,7 +10,7 @@ const Home = ({ loading }) => {
     <>
       {!loading && (
         <AnimatedPage>
-          <div className="flex flex-wrap flex-col-reverse justify-around lg:flex-row gap-8 w-full min-h-[calc(100vh-180px)] mx-auto mb-auto max-w-screen-xl lg:flex-nowrap">
+          <div className="flex flex-wrap flex-col-reverse justify-around lg:flex-row gap-8 w-full min-h-[calc(100vh-180px)] mx-auto mb-20 md:mb-8 max-w-screen-xl lg:flex-nowrap">
             <div className="flex flex-col justify-center gap-2 mx-auto mb-auto lg:mb-9 lg:basis-7/12">
               <h1 className="mt-auto text-5xl font-bold text-center lg:text-end sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-xl text-pale-gray font-lato whitespace-nowrap md:whitespace-pre-wrap">
                 Tigran
@@ -40,7 +40,7 @@ const Home = ({ loading }) => {
                   filter: "brightness(125%) saturate(125%) contrast(125%)",
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1,
                   ease: [0.45, 1.64, 0.41, 0.98],
                   repeat: 1,
                   repeatType: "reverse",
@@ -89,30 +89,80 @@ const Home = ({ loading }) => {
             </div>
           </div>
           <motion.div
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="py-8 bg-charcoal-gray-2"
+            initial={{ opacity: 0, x: -150 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{
               duration: 1.22,
               ease: [0.45, 1.64, 0.41, 0.98],
-              delay: 3.3
+              delay: 0.5,
             }}
           >
-            <div className="flex items-center justify-center max-w-3xl mx-auto text-lg font-medium leading-10 text-justify ">
-              <p>
-                I am an aspiring coder and web developer who is currently
-                enrolled in the DigitalCrafts bootcamp for Web Development. I
-                was born in Yerevan, Armenia and raised in Texas, where I
-                attended Clark High School and Plano East Senior High School. I
-                graduated with an International Baccalaureate Diploma. I have
-                some background in computer science and programming, having
-                studied these subjects both at Plano East Senior High School at
-                the University of Texas in Austin for a couple of years before
-                having to temporarily interrupt my education. I then worked as a
-                Guest Services Coordinator at The Driskill Hotel for six years,
-                where I developed my skills in team leadership, customer
-                service, and complaint resolution. In my leisure time, I enjoy
-                exploring the Texas hill country, playing disc golf, and
-                spending time with my wife.
+            {/* <Divider variant="middle" sx={{mb:4, mx: 'auto', background: '#c1cace'}} className='max-w-xl' /> */}
+            <div className="flex items-center justify-center max-w-3xl mx-auto text-xs font-semibold leading-10 text-justify md:text-xl ">
+              <p className="px-4">
+                I am an aspiring coder and{" "}
+                <span className="text-bold text-very-light-pink">
+                  web developer
+                </span>{" "}
+                who completed the{" "}
+                <span className="text-bold text-very-light-pink">
+                  DigitalCrafts
+                </span>{" "}
+                bootcamp for Web Development. I was born & raised in{" "}
+                <span className="text-bold text-very-light-pink">
+                  Yerevan, Armenia
+                </span>{" "}
+                and moved to{" "}
+                <span className="text-bold text-very-light-pink">Texas</span>,
+                where I attended{" "}
+                <span className="text-bold text-very-light-pink">
+                  high school{" "}
+                </span>
+                and graduated with an{" "}
+                <span className="text-bold text-very-light-pink">
+                  International Baccalaureate Diploma{" "}
+                </span>
+                where I first discovered my passion. From childhood, I was
+                fascinated with computers so I enjoyed learning{" "}
+                <span className="text-bold text-very-light-pink">
+                  computer science
+                </span>{" "}
+                and programming, both in high school and the{" "}
+                <span className="text-bold text-very-light-pink">
+                  University of Texas at Austin
+                </span>{" "}
+                for a couple of years before having to temporarily interrupt my
+                education. I then worked as a{" "}
+                <span className="text-bold text-very-light-pink">
+                  Guest Services Coordinator
+                </span>{" "}
+                at{" "}
+                <span className="text-bold text-very-light-pink">
+                  The Driskill Hotel
+                </span>{" "}
+                for six years, where I developed my skills in{" "}
+                <span className="text-bold text-very-light-pink">
+                  team leadership
+                </span>
+                ,{" "}
+                <span className="text-bold text-very-light-pink">
+                  customer service
+                </span>
+                , and{" "}
+                <span className="text-bold text-very-light-pink">
+                  complaint resolution
+                </span>
+                . In my leisure time, I enjoy exploring the Texas{" "}
+                <span className="text-bold text-very-light-pink">
+                  hill country
+                </span>
+                , playing{" "}
+                <span className="text-bold text-very-light-pink">
+                  disc golf
+                </span>
+                , and spending time with my{" "}
+                <span className="text-bold text-very-light-pink">wife</span>.
               </p>
             </div>
           </motion.div>
