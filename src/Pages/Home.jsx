@@ -71,7 +71,8 @@ const Home = ({ loading }) => {
                     color={"ButtonHighlight"}
                     className="flex gap-3"
                     fontWeight={"bold"}
-                    variant="h5"
+                    variant="body1"
+                    fontSize={'1.6rem'}
                   >
                     My Work
                     <ShortcutRoundedIcon />
@@ -83,7 +84,7 @@ const Home = ({ loading }) => {
             <div className="flex items-center justify-center max-w-3xl mx-auto mt-0 w-80 lg:w-full lg:basis-5/12">
               <img
                 className="object-scale-down px-16 sm:px-2 drop-shadow-xl"
-                src="/images/3d-render-mj.png"
+                src="/images/3d-render-mj.webp"
                 alt="3D render of person crossing arms and smiling"
               />
             </div>

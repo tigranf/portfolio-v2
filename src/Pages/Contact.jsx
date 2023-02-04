@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="flex flex-col justify-center gap-8">
           <div className="mt-4 text-center">
             <img
-              src="/images/vector-art.png"
+              src="/images/vector-art.webp"
               alt="vector art drawing of person in front of mountains"
               className="z-10 w-full max-w-lg mx-auto rounded-lg"
             />

@@ -18,7 +18,7 @@ const projects = [
     ],
     github: "https://github.com/tigranf/ez-site",
     demo: "https://github.com/tigranf/ez-site",
-    image: "/images/ez-site-home.png",
+    image: "/images/ez-site-home.webp",
   },
   {
     title: "any number",
@@ -27,7 +27,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript ES6"],
     github: "https://github.com/tigranf/any-number-game",
     demo: "https://any-number.netlify.app/",
-    image: "/images/any-number-home.png",
+    image: "/images/any-number-home.webp",
   },
 ];
 

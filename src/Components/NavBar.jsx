@@ -111,7 +111,7 @@ function NavBar({ window }) {
             className="rounded-full bg-silver"
             onClick={() => navigate("/")}
           >
-            <div className="w-9 h-9 m-[6px] bg-[url(../public/images/logo-mj2-100.png)] bg-no-repeat bg-center bg-contain"></div>
+            <div className="w-9 h-9 m-[6px] bg-[url(../public/images/logo-mj2-100.webp)] bg-no-repeat bg-center bg-contain"></div>
           </Box>
           <Box sx={{ cursor: "pointer" }} pl={1} onClick={() => navigate("/")}>
             <Typography fontWeight={"bold"} fontSize={"1.4rem"}>

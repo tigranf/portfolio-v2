@@ -35,10 +35,20 @@ const Footer = () => {
         </p>
 
         <span className="inline-flex justify-center mt-4 sm:mt-0 sm:justify-start sm:ml-auto">
-          <a href="https://github.com/tigranf" className="ml-3 text-black">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/tigranf"
+            className="ml-3 text-black"
+          >
             <GitHub />
           </a>
-          <a href="https://www.linkedin.com/in/tigranf/" className="ml-3 text-black">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/tigranf/"
+            className="ml-3 text-black"
+          >
             <LinkedIn />
           </a>
         </span>
