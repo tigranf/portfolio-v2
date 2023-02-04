@@ -40,6 +40,7 @@ const Footer = () => {
             target="_blank"
             href="https://github.com/tigranf"
             className="ml-3 text-black"
+            aria-label="GitHub"
           >
             <GitHub />
           </a>
@@ -48,6 +49,7 @@ const Footer = () => {
             target="_blank"
             href="https://www.linkedin.com/in/tigranf/"
             className="ml-3 text-black"
+            aria-label="LinkedIn"
           >
             <LinkedIn />
           </a>
