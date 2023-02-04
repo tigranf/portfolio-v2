@@ -16,7 +16,7 @@ const Footer = () => {
         >
           <a
             className="flex items-center justify-center font-medium text-black title-font md:justify-start sm:ml-auto"
-            href="/2023_Resume_Tigran_Farmanyan.pdf"
+            href="/Tigran_Farmanyan_Resume_2023.pdf"
           >
             <span className="ml-3 text-2xl underline">Tigran Farmanyan</span>
           </a>

@@ -60,7 +60,7 @@ const ResumeModal = ({ resumeModalOpen, setResumeModalOpen }) => {
             sx={{ height: "99%" }}
           >
             <object
-              data="/2023_Resume_Tigran_Farmanyan.pdf"
+              data="/Tigran_Farmanyan_Resume_2023.pdf"
               type="application/pdf"
               width="100%"
               height="100%"
@@ -69,7 +69,7 @@ const ResumeModal = ({ resumeModalOpen, setResumeModalOpen }) => {
                 Your web browser doesn't have a PDF plugin. Instead, you can{" "}
                 <Link
                   className="font-medium"
-                  href="/2023_Resume_Tigran_Farmanyan.pdf"
+                  href="/Tigran_Farmanyan_Resume_2023.pdf"
                 >
                   click here to download the PDF file.
                 </Link>
