@@ -32,7 +32,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" netlify>
           <div>
             <span className="text-lg font-bold uppercase text-silver">
               Full Name
