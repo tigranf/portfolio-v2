@@ -17,7 +17,7 @@ const projects = [
       "Git",
     ],
     github: "https://github.com/tigranf/ez-site",
-    demo: "https://github.com/tigranf/ez-site",
+    demo: "https://ez-site.netlify.app/",
     image: "/images/ez-site-home.webp",
   },
   {
