@@ -72,7 +72,7 @@ const Home = ({ loading }) => {
                     className="flex gap-3"
                     fontWeight={"bold"}
                     variant="body1"
-                    fontSize={'1.6rem'}
+                    fontSize={"1.6rem"}
                   >
                     My Work
                     <ShortcutRoundedIcon />
@@ -129,7 +129,7 @@ const Home = ({ loading }) => {
                 <span className="text-bold text-very-light-pink">
                   computer science
                 </span>{" "}
-                and programming, both in high school and the{" "}
+                and programming, both in high school and at the{" "}
                 <span className="text-bold text-very-light-pink">
                   University of Texas at Austin
                 </span>{" "}
@@ -164,6 +164,7 @@ const Home = ({ loading }) => {
                 </span>
                 , and spending time with my{" "}
                 <span className="text-bold text-very-light-pink">wife</span>.
+                Check out my work and thanks for stopping by!
               </p>
             </div>
           </motion.div>
