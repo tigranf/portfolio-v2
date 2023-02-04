@@ -94,12 +94,11 @@ const Home = ({ loading }) => {
             initial={{ opacity: 0, x: -150 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
-              duration: 1.22,
+              duration: 1.35,
               ease: [0.45, 1.64, 0.41, 0.98],
-              delay: 0.5,
+              delay: 0.2,
             }}
           >
-            {/* <Divider variant="middle" sx={{mb:4, mx: 'auto', background: '#c1cace'}} className='max-w-xl' /> */}
             <div className="flex items-center justify-center max-w-3xl mx-auto text-xs font-semibold leading-10 text-justify md:text-xl ">
               <p className="px-4">
                 I am an aspiring coder and{" "}
