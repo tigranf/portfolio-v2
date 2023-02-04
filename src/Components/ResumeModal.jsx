@@ -22,15 +22,15 @@ const ResumeModal = ({ resumeModalOpen, setResumeModalOpen }) => {
   return (
     <div>
       <Dialog
-        PaperProps={{ sx: { background: "#c1cace" } }}
-        scroll="body"
+        PaperProps={{ sx: { background: "#c1cace", height: "100vh" } }}
+        scroll="paper"
         fullWidth
         maxWidth="xl"
         fullScreen={fullScreen}
         open={resumeModalOpen}
         onClose={handleClose}
       >
-        <div class="flex ">
+        <div className="flex">
           <DialogTitle textAlign={"center"} id="responsive-dialog-title">
             <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
               <Description fontSize="large" />
@@ -54,12 +54,16 @@ const ResumeModal = ({ resumeModalOpen, setResumeModalOpen }) => {
           </DialogActions>
         </div>
         <DialogContent>
-          <DialogContentText gutterBottom textAlign={"center"}>
+          <DialogContentText
+            gutterBottom
+            textAlign={"center"}
+            sx={{ height: "99%" }}
+          >
             <object
               data="/2023_Resume_Tigran_Farmanyan.pdf"
               type="application/pdf"
               width="100%"
-              height="900px"
+              height="100%"
             >
               <p className="text-2xl leading-10">
                 Your web browser doesn't have a PDF plugin. Instead, you can{" "}
