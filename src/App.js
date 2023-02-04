@@ -53,7 +53,7 @@ export default function App() {
       {loading && loader}
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bm-bg-home.webp)] bg-fixed bg-opacity-90 bg-auto bg-top bg-no-repeat">
+        <Box className="text-pale-gray flex flex-col w-screen min-h-screen bg-[url(../public/images/bm-bg-home.png)] bg-fixed bg-opacity-90 bg-auto bg-top bg-no-repeat">
           <NavBar />
           <AnimatePresence mode="wait">
             <Routes key={location.pathname} location={location}>
