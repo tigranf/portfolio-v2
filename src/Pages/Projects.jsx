@@ -138,7 +138,7 @@ const Projects = () => {
           filter: "brightness(125%) saturate(125%) contrast(125%)",
         }}
         transition={{
-          duration: 1.5,
+          duration: 1,
           ease: [0.45, 1.64, 0.41, 0.98],
           repeat: 1,
           repeatType: "reverse",

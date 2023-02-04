@@ -24,6 +24,7 @@ module.exports = {
         "pale-gray": "#FBFDFF",
         "cool-gray": "#99A0A6",
         "charcoal-gray": "#23383D",
+        "charcoal-gray-2": "hsl(192, 24%, 19%,0.5)",
         "light-charcoal-gray": "hsl(192, 24%, 29%)",
         "dark-gray": "hsl(310, 6%, 29%)",
         "very-light-pink": "hsl(12, 24%, 81%)"

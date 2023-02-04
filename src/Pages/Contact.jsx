@@ -4,7 +4,7 @@ import { Button, Typography } from "@mui/material";
 const Contact = () => {
   return (
     <section className="mb-auto">
-      <div className="grid grid-cols-1 gap-8 px-5 mx-auto bg-transparent rounded-sm py-9 md:grid-cols-2 text-pale-gray sm:max-w-5xl">
+      <div className="grid grid-cols-1 gap-8 px-5 py-24 mx-auto bg-transparent rounded-sm md:grid-cols-2 text-silver sm:max-w-5xl">
         <div className="flex flex-col justify-center gap-8">
           <div className="mt-4 text-center">
             <img
@@ -22,7 +22,7 @@ const Contact = () => {
             <div className="mt-8 text-xl font-medium text-very-light-pink">
               Hate forms? Send me an{" "}
               <a
-                className="font-bold underline text-pale-gray"
+                className="font-bold underline text-silver"
                 href="mailto:tigran.farmanyan@gmail.com"
               >
                 email
@@ -31,47 +31,54 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form>
+        <form name="contact" method="POST" data-netlify="true">
           <div>
-            <span className="text-sm font-bold uppercase text-pale-gray">
+            <span className="text-lg font-bold uppercase text-silver">
               Full Name
             </span>
             <input
               className="w-full p-3 mt-2 rounded-lg bg-very-light-pink text-charcoal-gray focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-black"
               type="text"
               placeholder="Enter your Name"
+              name="name"
+              id="name"
               required
             />
           </div>
           <div className="mt-8">
-            <span className="text-sm font-bold uppercase text-pale-gray">
+            <span className="text-lg font-bold uppercase text-silver">
               Email
             </span>
             <input
               className="w-full p-3 mt-2 rounded-lg bg-very-light-pink text-charcoal-gray focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-black"
               type="email"
               placeholder="Enter your email address"
+              name="email"
+              id="email"
               required
             />
           </div>
           <div className="mt-8">
-            <span className="text-sm font-bold uppercase text-pale-gray">
+            <span className="text-lg font-bold uppercase text-silver">
               Phone Number
             </span>
             <input
               className="w-full p-3 mt-2 rounded-lg bg-very-light-pink text-charcoal-gray focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-black"
               type="phone"
-              placeholder="Enter your Phone Number including country code"
-              required
+              placeholder="Enter your Phone Number"
+              name="phone"
+              id="phone"
             />
           </div>
           <div className="mt-8">
-            <span className="text-sm font-bold uppercase text-pale-gray">
+            <span className="text-lg font-bold uppercase text-silver">
               Message
             </span>
             <textarea
               className="w-full h-32 p-3 mt-2 rounded-lg bg-very-light-pink text-charcoal-gray focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-black"
               placeholder="Enter your Message"
+              name="message"
+              id="message"
               required
             ></textarea>
           </div>

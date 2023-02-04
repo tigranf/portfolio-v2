@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full max-w-4xl mx-auto font-bold text-black body-font">
+    <footer className="w-full max-w-4xl mx-auto mt-12 font-bold text-black body-font">
       <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:justify-around sm:flex-row">
         <Tooltip
           title="Download Resume"
