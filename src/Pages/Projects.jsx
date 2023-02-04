@@ -7,7 +7,7 @@ const projects = [
   {
     title: "EZ-Site",
     description:
-      "EZ-Site is a website for leveraging OpenAI language models to generate basic website layout and content.",
+      "EZ-Site is a website for leveraging OpenAI language models to generate basic website layout and content. Solo project born out of a need for website design and content ideas.",
     tech: [
       "React",
       "Material-UI",
@@ -21,9 +21,25 @@ const projects = [
     image: "/images/ez-site-home.webp",
   },
   {
+    title: "HelperHub",
+    description:
+      "Full-stack website that allows users to rate and review people who work in the service industry. Leave feedback and comments for those who work for you. Tipping functionality coming soon.",
+    tech: [
+      "PostgreSQL",
+      "Node.js",
+      "Express.js",
+      "Sequelize",
+      "EJS",
+      "TailwindCSS",
+    ],
+    github: "https://github.com/tigranf/helper-hub-app",
+    demo: "",
+    image: "/images/helper-hub-home.webp",
+  },
+  {
     title: "any number",
     description:
-      "A JavaScript focused drag & drop web game inspired by The Price is Right",
+      "A JavaScript focused drag & drop web game inspired by The Price is Right. Custom drag & drop functionality, modal, drop- down, tooltips, CSS animations, and design.",
     tech: ["HTML5", "CSS3", "JavaScript ES6"],
     github: "https://github.com/tigranf/any-number-game",
     demo: "https://any-number.netlify.app/",
@@ -34,7 +50,7 @@ const projects = [
 const Projects = () => {
   const navigate = useNavigate();
   return (
-    <section className="flex flex-col max-w-screen-lg mx-auto mb-auto">
+    <section className="flex flex-col max-w-screen-xl mx-auto mb-auto">
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,15 +63,16 @@ const Projects = () => {
           My Work
         </h2>
       </motion.div>
-      <div className="flex flex-col items-stretch justify-center gap-6 p-2 mx-auto mb-auto lg:flex-wrap md:flex-row min-h-96 place-items-center md:basis-1">
+      <div className="flex flex-col items-stretch justify-center gap-6 p-2 mx-auto mb-auto md:flex-wrap md:flex-row min-h-96 place-items-center md:basis-1">
         {projects.map((project, index) => (
           <motion.div
+            className="min-w-[280px]"
             key={index}
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 1,
-              delay: index * 0.2 + 0.2,
+              delay: index * 0.15 + 0.05,
               ease: [0.45, 1.64, 0.41, 0.98],
             }}
           >
@@ -83,6 +100,7 @@ const Projects = () => {
               </div>
               <div className="flex flex-wrap justify-center gap-4 px-6 pt-4 pb-6">
                 <Button
+                  disabled={!project.demo}
                   sx={{
                     minWidth: "40%",
                     minHeight: { sm: 56, xs: 30 },
@@ -95,6 +113,9 @@ const Projects = () => {
                     },
                     borderRadius: 2,
                     boxShadow: "0px 4px 12px 6px hsl(194, 28%, 16%, 0.5)",
+                    filter: !project.demo
+                      ? "brightness(70%) contrast(50%) blur(1px)"
+                      : "none",
                   }}
                   endIcon={<ArrowForward className="text-silver" />}
                   href={project.demo}
