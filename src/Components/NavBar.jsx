@@ -98,7 +98,7 @@ function NavBar({ window }) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", mt: 2 }}>
       <AppBar
         position="static"
         elevation={0}
