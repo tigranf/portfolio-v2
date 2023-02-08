@@ -111,11 +111,11 @@ const Home = ({ loading }) => {
                 </span>{" "}
                 bootcamp for Web Development. I was born & raised in{" "}
                 <span className="text-bold text-very-light-pink">
-                  Yerevan, Armenia
+                  Yerevan, Armenia,
                 </span>{" "}
-                and moved to{" "}
+                moved to{" "}
                 <span className="text-bold text-very-light-pink">Texas</span>,
-                where I attended{" "}
+                attended{" "}
                 <span className="text-bold text-very-light-pink">
                   high school{" "}
                 </span>
